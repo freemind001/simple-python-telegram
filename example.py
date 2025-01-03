@@ -9,10 +9,7 @@ users = {}
 async def sender():
     while True:
         for user_id in users:
-            try:
-                await bot.send_message(user_id, f"Broadcasted message")
-            except Exception as e:
-                logging.error(f"Failed to send message to {user_id}: {e}")
+            await bot.send_message(user_id, f"Broadcasted message")
         await asyncio.sleep(10)
 
 
