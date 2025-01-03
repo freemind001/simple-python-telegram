@@ -5,10 +5,10 @@ import logging
 
 class Bot:
     """
-    A class that interacts with Telegram Bot API to send messages and process updates.
+    A class that interacts with Telegram Bot API to send and receive messages.
 
     Methods:
-        listen: Starts listening for updates and handles them using the provided message handler.
+        listen: Starts listening for messages and handles them using the provided message handler.
         send_message: Sends a message to a specified chat.
     """
 
