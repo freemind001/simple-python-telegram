@@ -7,40 +7,18 @@ class Bot:
     """
     A class that interacts with Telegram Bot API to send messages and process updates.
 
-    Attributes:
-        base_url (str): The base URL for the Telegram Bot API.
-        _message_handler (callable): The handler function for processing incoming messages.
-        _offset (int or None): The update offset to track the next update.
-        _processing_delay (int): The delay in seconds before retrying on errors.
-
     Methods:
-        _process_updates: Fetches updates from Telegram API.
         listen: Starts listening for updates and handles them using the provided message handler.
         send_message: Sends a message to a specified chat.
     """
 
     def __init__(self, token: str):
-        """
-        Initializes the Bot with the provided API token.
-
-        Args:
-            token (str): The API token for the bot.
-        """
         self.base_url = f"https://api.telegram.org/bot{token}"
         self._message_handler = None
         self._offset = None
         self._processing_delay = 1
 
     async def _process_updates(self):
-        """
-        Fetches updates from the Telegram Bot API and processes them.
-
-        This method retrieves updates from the bot's Telegram chat and processes them
-        using the assigned message handler function.
-
-        Returns:
-            dict: The response from the API, containing updates or error information.
-        """
         try:
             params = {"timeout": 30}
             if self._offset:
@@ -66,7 +44,7 @@ class Bot:
 
     async def listen(self, message_handler):
         """
-        Starts the bot's listening loop and processes incoming updates using the provided handler.
+        Starts the bot's listening loop and processes incoming messages using the provided handler.
 
         Args:
             message_handler (callable): The function to handle incoming messages.
