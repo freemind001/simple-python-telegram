@@ -1,4 +1,4 @@
 # simple-python-telegram
-Lightweight Telegram API wrapper written in python for projects that need basic telegram text functionality.
+Lightweight Python wrapper for the Telegram API, designed for projects requiring basic Telegram texting functionality.
 
-Supports sending and recieving messages with proper error handling. 
+Supports sending and receiving messages with proper error handling. 
